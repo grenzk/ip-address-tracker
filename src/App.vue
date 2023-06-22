@@ -1,7 +1,12 @@
 <script setup></script>
 
 <template>
-  <h1>Hello, Vue!</h1>
+  <main>
+    <picture>
+      <source srcset="@/assets/img/pattern-bg-desktop.png" media="(min-width: 600px)" />
+      <img src="@/assets/img/pattern-bg-mobile.png" />
+    </picture>
+  </main>
 </template>
 
 <style scoped></style>
