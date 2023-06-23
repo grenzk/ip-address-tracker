@@ -58,6 +58,7 @@ import InputText from 'primevue/inputtext'
     width: 100%;
 
     .p-inputtext {
+      font-family: var(--body-font);
       border-radius: var(--button-border-radius) 0 0 var(--button-border-radius);
       padding: 1rem;
       width: 100%;
