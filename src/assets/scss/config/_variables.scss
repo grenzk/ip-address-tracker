@@ -1,10 +1,12 @@
 :root {
-  --very-dark-gray: hsl(0, 0%, 17%);
-  --dark-gray: hsl(0, 0%, 59%);
+  --primary-very-dark-gray: hsl(0, 0%, 17%);
+  --primary-dark-gray: hsl(0, 0%, 59%);
+
+  --neutral-white: hsl(0, 0%, 100%);
 
   --body-font: 'Rubik', sans-serif;
 
-  --biggest-font-size: 2rem;
+  --biggest-font-size: 1.55rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
