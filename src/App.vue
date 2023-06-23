@@ -53,7 +53,7 @@ import InputText from 'primevue/inputtext'
   }
 
   .p-inputgroup {
-    --button-border-radius: 0.9rem;
+    --button-border-radius: 1rem;
     display: flex;
     width: 100%;
 
