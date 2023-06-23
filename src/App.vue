@@ -18,6 +18,7 @@ import InputText from 'primevue/inputtext'
           <InputText placeholder="Search for any IP address or domain" />
           <Button icon="pi pi-chevron-right" severity="secondary" />
         </div>
+
       </div>
     </div>
   </main>
@@ -70,6 +71,11 @@ import InputText from 'primevue/inputtext'
       border-color: var(--primary-very-dark-gray);
       border-radius: 0 var(--button-border-radius) var(--button-border-radius) 0;
       flex-basis: 20%;
+
+      &-icon {
+        font-size: 0.8rem;
+        font-weight: var(--font-bold);
+      }
     }
   }
 }
