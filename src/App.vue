@@ -19,6 +19,32 @@ import InputText from 'primevue/inputtext'
           <Button icon="pi pi-chevron-right" severity="secondary" />
         </div>
 
+        <ul class="network-info" role="list">
+          <li>
+            <div class="item">
+              <p class="label">IP Address</p>
+              <p class="value">192.212.174.101</p>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              <p class="label">Location</p>
+              <p class="value">Brooklyn NY, 10001</p>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              <p class="label">Timezone</p>
+              <p class="value">UTC-05:00</p>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              <p class="label">ISP</p>
+              <p class="value">SpaceX Starlink</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </main>
@@ -76,6 +102,40 @@ import InputText from 'primevue/inputtext'
         font-size: 0.8rem;
         font-weight: var(--font-bold);
       }
+    }
+  }
+}
+
+.network-info {
+  background-color: var(--neutral-white);
+  box-shadow: hsla(240, 5%, 41%, 0.2) 0rem 0.4375rem 1.8125rem 0rem;
+  border-radius: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  row-gap: 1rem;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.5rem;
+
+    .label {
+      text-transform: uppercase;
+      font-weight: var(--font-bold);
+      font-size: var(--smaller-font-size);
+      letter-spacing: 1.7px;
+      color: var(--primary-dark-gray);
+    }
+
+    .value {
+      font-weight: var(--font-medium);
+      font-size: var(--h2-font-size);
     }
   }
 }

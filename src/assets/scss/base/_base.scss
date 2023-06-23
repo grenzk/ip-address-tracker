@@ -15,6 +15,10 @@ body {
   font-size: var(--normal-font-size);
 }
 
+ul[role='list'] {
+  list-style: none;
+}
+
 picture,
 img,
 svg {
