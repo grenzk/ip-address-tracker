@@ -6,11 +6,6 @@ import InputText from 'primevue/inputtext'
 <template>
   <main>
     <div class="container">
-      <picture>
-        <source srcset="@/assets/img/pattern-bg-desktop.png" media="(min-width: 600px)" />
-        <img src="@/assets/img/pattern-bg-mobile.png" />
-      </picture>
-
       <div class="user-input">
         <h1 class="title">IP Address Tracker</h1>
 
@@ -18,34 +13,34 @@ import InputText from 'primevue/inputtext'
           <InputText placeholder="Search for any IP address or domain" />
           <Button icon="pi pi-chevron-right" severity="secondary" />
         </div>
-
-        <ul class="network-info" role="list">
-          <li>
-            <div class="item">
-              <p class="label">IP Address</p>
-              <p class="value">192.212.174.101</p>
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              <p class="label">Location</p>
-              <p class="value">Brooklyn NY, 10001</p>
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              <p class="label">Timezone</p>
-              <p class="value">UTC-05:00</p>
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              <p class="label">ISP</p>
-              <p class="value">SpaceX Starlink</p>
-            </div>
-          </li>
-        </ul>
       </div>
+
+      <ul class="network-info" role="list">
+        <li>
+          <div class="item">
+            <p class="label">IP Address</p>
+            <p class="value">192.212.174.101</p>
+          </div>
+        </li>
+        <li>
+          <div class="item">
+            <p class="label">Location</p>
+            <p class="value">Brooklyn NY, 10001</p>
+          </div>
+        </li>
+        <li>
+          <div class="item">
+            <p class="label">Timezone</p>
+            <p class="value">UTC-05:00</p>
+          </div>
+        </li>
+        <li>
+          <div class="item">
+            <p class="label">ISP</p>
+            <p class="value">SpaceX Starlink</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </main>
 </template>
@@ -53,6 +48,10 @@ import InputText from 'primevue/inputtext'
 <style lang="scss">
 .container {
   position: relative;
+  background-image: url('./assets/img/pattern-bg-mobile.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 18.7rem;
 
   img {
     width: 100%;
@@ -61,7 +60,6 @@ import InputText from 'primevue/inputtext'
 
 .user-input {
   position: absolute;
-
   top: 1.7rem;
   left: 50%;
   width: 88%;
@@ -70,7 +68,7 @@ import InputText from 'primevue/inputtext'
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  row-gap: 2rem;
+  row-gap: 1.7rem;
 
   .title {
     color: var(--neutral-white);
@@ -87,7 +85,7 @@ import InputText from 'primevue/inputtext'
     .p-inputtext {
       font-family: var(--body-font);
       border-radius: var(--button-border-radius) 0 0 var(--button-border-radius);
-      padding: 1rem;
+      padding: 1.2rem;
       width: 100%;
       font-size: var(--small-font-size);
     }
@@ -107,16 +105,20 @@ import InputText from 'primevue/inputtext'
 }
 
 .network-info {
+  position: absolute;
+  bottom: -55%;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: var(--neutral-white);
   box-shadow: hsla(240, 5%, 41%, 0.2) 0rem 0.4375rem 1.8125rem 0rem;
   border-radius: 1rem;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  row-gap: 1rem;
+  width: 88%;
+  row-gap: 1.5rem;
 
   .item {
     display: flex;
