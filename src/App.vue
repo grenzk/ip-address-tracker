@@ -50,11 +50,18 @@ import InputText from 'primevue/inputtext'
   position: relative;
   background-image: url('./assets/img/pattern-bg-mobile.png');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  box-shadow: hsla(240, 5%, 41%, 0.2) 0rem 0.4375rem 1.8125rem 0rem;
   height: 18.7rem;
 
   img {
     width: 100%;
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    background-image: url('./assets/img/pattern-bg-desktop.png');
   }
 }
 
