@@ -1,6 +1,7 @@
 <script setup>
 import Button from 'primevue/button'
 import InputText from 'primevue/inputtext'
+import Divider from 'primevue/divider'
 </script>
 
 <template>
@@ -21,19 +22,25 @@ import InputText from 'primevue/inputtext'
             <p class="label">IP Address</p>
             <p class="value">192.212.174.101</p>
           </div>
+          <Divider type="solid" layout="vertical" />
         </li>
+
         <li>
           <div class="item">
             <p class="label">Location</p>
-            <p class="value">Brooklyn NY, 10001</p>
+            <p class="value">Brooklyn, NY 10001</p>
           </div>
+          <Divider type="solid" layout="vertical" />
         </li>
+
         <li>
           <div class="item">
             <p class="label">Timezone</p>
             <p class="value">UTC-05:00</p>
           </div>
+          <Divider type="solid" layout="vertical" />
         </li>
+
         <li>
           <div class="item">
             <p class="label">ISP</p>
@@ -85,13 +92,13 @@ import InputText from 'primevue/inputtext'
   }
 
   .p-inputgroup {
-    --button-border-radius: 1rem;
+    --input-button-br: 1rem;
     display: flex;
     width: 100%;
 
     .p-inputtext {
       font-family: var(--body-font);
-      border-radius: var(--button-border-radius) 0 0 var(--button-border-radius);
+      border-radius: var(--input-button-br) 0 0 var(--input-button-br);
       padding: 1.2rem;
       width: 100%;
       font-size: var(--small-font-size);
@@ -100,8 +107,8 @@ import InputText from 'primevue/inputtext'
     .p-button {
       background-color: var(--primary-black);
       border-color: var(--primary-very-dark-gray);
-      border-radius: 0 var(--button-border-radius) var(--button-border-radius) 0;
-      flex-basis: 20%;
+      border-radius: 0 var(--input-button-br) var(--input-button-br) 0;
+      width: 4rem;
 
       &-icon {
         font-size: 0.8rem;
@@ -138,7 +145,7 @@ import InputText from 'primevue/inputtext'
       text-transform: uppercase;
       font-weight: var(--font-bold);
       font-size: var(--smaller-font-size);
-      letter-spacing: 1.7px;
+      letter-spacing: 2px;
       color: var(--primary-dark-gray);
     }
 
@@ -146,6 +153,10 @@ import InputText from 'primevue/inputtext'
       font-weight: var(--font-medium);
       font-size: var(--h2-font-size);
     }
+  }
+
+  .p-divider-solid.p-divider-vertical {
+    display: none;
   }
 }
 </style>
