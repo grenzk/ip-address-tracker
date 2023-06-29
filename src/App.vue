@@ -77,6 +77,7 @@ import Divider from 'primevue/divider'
   top: 1.7rem;
   left: 50%;
   width: 88%;
+  max-width: 45rem;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
