@@ -1,4 +1,6 @@
 <script setup>
+import { networkData } from '@/data'
+
 import Button from 'primevue/button'
 import InputText from 'primevue/inputtext'
 import Divider from 'primevue/divider'
@@ -17,35 +19,12 @@ import Divider from 'primevue/divider'
       </div>
 
       <ul class="network-info l-flex" role="list">
-        <li>
+        <li v-for="(networkItem, index) in networkData" :key="index">
           <div class="item l-flex">
-            <p class="label">IP Address</p>
-            <p class="value">192.212.174.101</p>
+            <p class="label">{{ networkItem.label }}</p>
+            <p class="value">{{ networkItem.value }}</p>
           </div>
           <Divider type="solid" layout="vertical" />
-        </li>
-
-        <li>
-          <div class="item l-flex">
-            <p class="label">Location</p>
-            <p class="value">Brooklyn, NY 10001</p>
-          </div>
-          <Divider type="solid" layout="vertical" />
-        </li>
-
-        <li>
-          <div class="item l-flex">
-            <p class="label">Timezone</p>
-            <p class="value">UTC-05:00</p>
-          </div>
-          <Divider type="solid" layout="vertical" />
-        </li>
-
-        <li>
-          <div class="item l-flex">
-            <p class="label">ISP</p>
-            <p class="value">SpaceX Starlink</p>
-          </div>
         </li>
       </ul>
     </div>
