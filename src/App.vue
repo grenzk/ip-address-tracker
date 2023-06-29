@@ -7,7 +7,7 @@ import Divider from 'primevue/divider'
 <template>
   <main>
     <div class="container">
-      <div class="user-input">
+      <div class="user-input l-flex">
         <h1 class="title">IP Address Tracker</h1>
 
         <div class="p-inputgroup">
@@ -16,9 +16,9 @@ import Divider from 'primevue/divider'
         </div>
       </div>
 
-      <ul class="network-info" role="list">
+      <ul class="network-info l-flex" role="list">
         <li>
-          <div class="item">
+          <div class="item l-flex">
             <p class="label">IP Address</p>
             <p class="value">192.212.174.101</p>
           </div>
@@ -26,7 +26,7 @@ import Divider from 'primevue/divider'
         </li>
 
         <li>
-          <div class="item">
+          <div class="item l-flex">
             <p class="label">Location</p>
             <p class="value">Brooklyn, NY 10001</p>
           </div>
@@ -34,7 +34,7 @@ import Divider from 'primevue/divider'
         </li>
 
         <li>
-          <div class="item">
+          <div class="item l-flex">
             <p class="label">Timezone</p>
             <p class="value">UTC-05:00</p>
           </div>
@@ -42,7 +42,7 @@ import Divider from 'primevue/divider'
         </li>
 
         <li>
-          <div class="item">
+          <div class="item l-flex">
             <p class="label">ISP</p>
             <p class="value">SpaceX Starlink</p>
           </div>
@@ -79,10 +79,6 @@ import Divider from 'primevue/divider'
   width: 88%;
   max-width: 45rem;
   transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   row-gap: 1.7rem;
 
   .title {
@@ -127,19 +123,11 @@ import Divider from 'primevue/divider'
   background-color: var(--neutral-white);
   box-shadow: hsla(240, 5%, 41%, 0.2) 0rem 0.4375rem 1.8125rem 0rem;
   border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 1.5rem;
   width: 88%;
   row-gap: 1.5rem;
 
   .item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     row-gap: 0.5rem;
 
     .label {
