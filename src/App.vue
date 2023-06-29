@@ -39,10 +39,6 @@ import Divider from 'primevue/divider'
   background-size: cover;
   box-shadow: hsla(240, 5%, 41%, 0.2) 0rem 0.4375rem 1.8125rem 0rem;
   height: 18.7rem;
-
-  img {
-    width: 100%;
-  }
 }
 
 @media (min-width: 600px) {
