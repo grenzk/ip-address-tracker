@@ -4,6 +4,7 @@ import { networkData } from '@/data'
 import Button from 'primevue/button'
 import InputText from 'primevue/inputtext'
 import Divider from 'primevue/divider'
+import MapView from '@/components/MapView.vue'
 </script>
 
 <template>
@@ -28,6 +29,7 @@ import Divider from 'primevue/divider'
         </li>
       </ul>
     </div>
+    <MapView />
   </main>
 </template>
 
@@ -37,8 +39,9 @@ import Divider from 'primevue/divider'
   background-image: url('./assets/img/pattern-bg-mobile.png');
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: hsla(240, 5%, 41%, 0.2) 0rem 0.4375rem 1.8125rem 0rem;
+  box-shadow: hsla(240, 5%, 41%, 0.4) 0rem 0.4375rem 1.8125rem 0rem;
   height: 18.7rem;
+  z-index: 1;
 }
 
 @media (min-width: 600px) {
@@ -53,6 +56,7 @@ import Divider from 'primevue/divider'
 }
 
 .user-input {
+  z-index: 1;
   position: absolute;
   top: 1.7rem;
   left: 50%;
@@ -95,6 +99,7 @@ import Divider from 'primevue/divider'
 }
 
 .network-info {
+  z-index: 1;
   position: absolute;
   bottom: -55%;
   left: 50%;
