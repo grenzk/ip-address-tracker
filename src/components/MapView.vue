@@ -1,10 +1,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { LMap, LTileLayer, LMarker } from '@vue-leaflet/vue-leaflet'
+import { LMap, LTileLayer, LMarker, LIcon } from '@vue-leaflet/vue-leaflet'
 
 let zoom = ref(12)
-let center = ref([35.6895, 139.6917])
-let markerCoordinates = ref([35.6895, 139.6917])
+let center = ref([35.6985, 139.6917])
+let markerCoordinates = ref([35.6985, 139.6917])
 const mapHeight = ref('100%')
 
 const adjustMapHeight = () => {
@@ -30,7 +30,9 @@ onMounted(() => {
         layer-type="base"
         name="Stadia Maps Basemap"
       ></LTileLayer>
-      <LMarker :lat-lng="markerCoordinates"></LMarker>
+      <LMarker :lat-lng="markerCoordinates">
+        <LIcon icon-url="src/assets/img/icon-location.svg" />
+      </LMarker>
     </LMap>
   </div>
 </template>
