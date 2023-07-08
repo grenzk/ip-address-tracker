@@ -3,8 +3,8 @@ import { ref, onMounted } from 'vue'
 import { LMap, LTileLayer, LMarker, LIcon } from '@vue-leaflet/vue-leaflet'
 
 let zoom = ref(12)
-let center = ref([35.6985, 139.6917])
-let markerCoordinates = ref([35.6985, 139.6917])
+let center = ref([40.6782, -73.9442])
+let markerCoordinates = ref([40.6782, -73.9442])
 const mapHeight = ref('100%')
 
 const adjustMapHeight = () => {
