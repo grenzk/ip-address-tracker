@@ -1,22 +1,48 @@
 <script setup>
+import { useForm } from 'vee-validate'
+import * as Yup from 'yup'
+
 import { networkData } from '@/data'
 
 import Button from 'primevue/button'
-import InputText from 'primevue/inputtext'
 import Divider from 'primevue/divider'
+import InputText from 'primevue/inputtext'
+import Toast from 'primevue/toast'
 import MapView from '@/components/MapView.vue'
+
+const schema = Yup.object({ ipAddress: Yup.string().trim().required().label('IP address') })
+
+const { defineComponentBinds, handleSubmit, resetForm } = useForm({
+  validationSchema: schema
+})
+
+const ipAddress = defineComponentBinds('ipAddress')
+
+const onSubmit = handleSubmit((values) => {
+  console.log(values)
+
+  resetForm()
+})
 </script>
 
 <template>
+  <Toast />
   <main>
     <div class="container">
       <div class="user-input l-flex">
         <h1 class="title">IP Address Tracker</h1>
 
-        <div class="p-inputgroup">
-          <InputText placeholder="Search for any IP address or domain" />
-          <Button icon="pi pi-chevron-right" severity="secondary" />
-        </div>
+        <form @submit="onSubmit">
+          <div class="p-inputgroup">
+            <InputText
+              v-bind="ipAddress"
+              aria-describedby="ipAddress-help"
+              placeholder="Search for any IP address or domain"
+            />
+
+            <Button icon="pi pi-chevron-right" severity="secondary" type="submit" />
+          </div>
+        </form>
       </div>
 
       <ul class="network-info l-flex" role="list">
@@ -53,6 +79,10 @@ import MapView from '@/components/MapView.vue'
 .user-input,
 .network-info {
   transform: translateX(-50%);
+}
+
+form {
+  width: 100%;
 }
 
 .user-input {
