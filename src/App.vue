@@ -1,14 +1,19 @@
 <script setup>
+import { ref } from 'vue'
+import Axios from 'axios'
 import { useForm } from 'vee-validate'
 import * as Yup from 'yup'
 
 import { networkData } from '@/data'
+import { API_KEY, API_ENDPOINT } from '@/config'
 
 import Button from 'primevue/button'
 import Divider from 'primevue/divider'
 import InputText from 'primevue/inputtext'
 import Toast from 'primevue/toast'
 import MapView from '@/components/MapView.vue'
+
+const geolocationData = ref({})
 
 const schema = Yup.object({ ipAddress: Yup.string().trim().required().label('IP address') })
 
@@ -18,9 +23,22 @@ const { defineComponentBinds, handleSubmit, resetForm } = useForm({
 
 const ipAddress = defineComponentBinds('ipAddress')
 
-const onSubmit = handleSubmit((values) => {
-  console.log(values)
+const fetchGeolocationData = async (input) => {
+  try {
+    const response = await Axios.get(API_ENDPOINT, {
+      params: {
+        apiKey: API_KEY,
+        ipAddress: input
+      }
+    })
+    geolocationData.value = response.data
+  } catch (error) {
+    geolocationData.value = error.response.data.messages
+  }
+}
 
+const onSubmit = handleSubmit((values) => {
+  fetchGeolocationData(values.ipAddress)
   resetForm()
 })
 </script>
@@ -39,7 +57,6 @@ const onSubmit = handleSubmit((values) => {
               aria-describedby="ipAddress-help"
               placeholder="Search for any IP address or domain"
             />
-
             <Button icon="pi pi-chevron-right" severity="secondary" type="submit" />
           </div>
         </form>
