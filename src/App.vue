@@ -4,16 +4,16 @@ import Axios from 'axios'
 import { useForm } from 'vee-validate'
 import * as Yup from 'yup'
 
-import { networkData } from '@/data'
 import { API_KEY, API_ENDPOINT } from '@/config'
 
 import Button from 'primevue/button'
-import Divider from 'primevue/divider'
+// import Divider from 'primevue/divider'
 import InputText from 'primevue/inputtext'
 import Toast from 'primevue/toast'
 import MapView from '@/components/MapView.vue'
+import GeolocationItem from '@/components/GeolocationItem.vue'
 
-const geolocationData = ref({})
+const geolocationData = ref(null)
 
 const schema = Yup.object({ ipAddress: Yup.string().trim().required().label('IP address') })
 
@@ -63,13 +63,30 @@ const onSubmit = handleSubmit((values) => {
       </div>
 
       <ul class="network-info l-flex" role="list">
-        <li v-for="(networkItem, index) in networkData" :key="index">
-          <div class="item l-flex">
-            <p class="label">{{ networkItem.label }}</p>
-            <p class="value">{{ networkItem.value }}</p>
-          </div>
-          <Divider type="solid" layout="vertical" />
-        </li>
+        <GeolocationItem
+          label="IP Address"
+          :value="geolocationData ? geolocationData.ip : ''"
+          default-value="192.212.174.101"
+        />
+        <GeolocationItem
+          label="Location"
+          :value="
+            geolocationData
+              ? `${geolocationData.location.region}, ${geolocationData.location.city}`
+              : ''
+          "
+          default-value="Brooklyn, NY 10001"
+        />
+        <GeolocationItem
+          label="Timezone"
+          :value="geolocationData ? `UTC${geolocationData.location.timezone}` : ''"
+          default-value="UTC-05:00"
+        />
+        <GeolocationItem
+          label="ISP"
+          :value="geolocationData ? geolocationData.isp : ''"
+          default-value="SpaceX Starlink"
+        />
       </ul>
     </div>
     <MapView />
