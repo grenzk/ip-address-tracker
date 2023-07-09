@@ -1,17 +1,12 @@
 <script setup>
 import { ref } from 'vue'
-import Axios from 'axios'
 import { useForm } from 'vee-validate'
+import Axios from 'axios'
 import * as Yup from 'yup'
 
 import { API_KEY, API_ENDPOINT } from '@/config'
 
-import Button from 'primevue/button'
-// import Divider from 'primevue/divider'
-import InputText from 'primevue/inputtext'
-import Toast from 'primevue/toast'
-import MapView from '@/components/MapView.vue'
-import GeolocationItem from '@/components/GeolocationItem.vue'
+import { MapView, GeolocationItem } from '@/components'
 
 const geolocationData = ref(null)
 
@@ -174,26 +169,5 @@ form {
   width: 88%;
   max-width: 100rem;
   row-gap: 1.5rem;
-
-  .item {
-    row-gap: 0.5rem;
-
-    .label {
-      text-transform: uppercase;
-      font-weight: var(--font-bold);
-      font-size: var(--smaller-font-size);
-      letter-spacing: 2px;
-      color: var(--primary-dark-gray);
-    }
-
-    .value {
-      font-weight: var(--font-medium);
-      font-size: var(--h2-font-size);
-    }
-  }
-
-  .p-divider-solid.p-divider-vertical {
-    display: none;
-  }
 }
 </style>

@@ -1,6 +1,4 @@
 <script setup>
-import Divider from 'primevue/divider'
-
 defineProps({
   label: {
     type: String,
@@ -26,3 +24,26 @@ defineProps({
     <Divider type="solid" layout="vertical" />
   </li>
 </template>
+
+<style scoped lang="scss">
+.item {
+  row-gap: 0.5rem;
+
+  .label {
+    text-transform: uppercase;
+    font-weight: var(--font-bold);
+    font-size: var(--smaller-font-size);
+    letter-spacing: 2px;
+    color: var(--primary-dark-gray);
+  }
+
+  .value {
+    font-weight: var(--font-medium);
+    font-size: var(--h2-font-size);
+  }
+}
+
+.p-divider-solid.p-divider-vertical {
+  display: none;
+}
+</style>

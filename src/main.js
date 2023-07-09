@@ -8,4 +8,16 @@ import 'primevue/resources/themes/lara-light-indigo/theme.css'
 import 'primeicons/primeicons.css'
 import 'leaflet/dist/leaflet.css'
 
-createApp(App).use(PrimeVue, { ripple: true }).use(ToastService).mount('#app')
+import Button from 'primevue/button'
+import Divider from 'primevue/divider'
+import InputText from 'primevue/inputtext'
+import Toast from 'primevue/toast'
+
+createApp(App)
+  .use(PrimeVue, { ripple: true })
+  .use(ToastService)
+  .component('Button', Button)
+  .component('Divider', Divider)
+  .component('InputText', InputText)
+  .component('Toast', Toast)
+  .mount('#app')
