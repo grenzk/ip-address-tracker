@@ -84,7 +84,7 @@ const onSubmit = handleSubmit((values) => {
         />
       </ul>
     </div>
-    <MapView />
+    <MapView :location="geolocationData?.location" />
   </main>
 </template>
 

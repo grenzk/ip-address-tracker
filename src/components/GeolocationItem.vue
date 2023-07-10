@@ -5,12 +5,10 @@ defineProps({
     required: true
   },
   value: {
-    type: String,
-    default: undefined
+    type: String
   },
   defaultValue: {
-    type: String,
-    default: ''
+    type: String
   }
 })
 </script>
