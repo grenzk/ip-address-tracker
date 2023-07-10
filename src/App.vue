@@ -60,7 +60,7 @@ const onSubmit = handleSubmit((values) => {
       <ul class="network-info l-flex" role="list">
         <GeolocationItem
           label="IP Address"
-          :value="geolocationData ? geolocationData.ip : ''"
+          :value="geolocationData?.ip"
           default-value="192.212.174.101"
         />
         <GeolocationItem
@@ -79,7 +79,7 @@ const onSubmit = handleSubmit((values) => {
         />
         <GeolocationItem
           label="ISP"
-          :value="geolocationData ? geolocationData.isp : ''"
+          :value="geolocationData?.isp"
           default-value="SpaceX Starlink"
         />
       </ul>
