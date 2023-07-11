@@ -187,6 +187,8 @@ form {
   border-radius: 1rem;
   padding: 1.5rem;
   width: 88%;
+  max-height: 19rem;
+  overflow: auto;
   max-width: 100rem;
   row-gap: 1.5rem;
 }
