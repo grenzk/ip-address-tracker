@@ -35,7 +35,7 @@ onBeforeUpdate(() => {
 
 <template>
   <div class="map" :style="{ height: mapHeight }">
-    <LMap :zoom="zoom" :center="center" :useGlobalLeaflet="false">
+    <LMap :zoom="zoom" :center="center" :useGlobalLeaflet="false" :options="{ zoomControl: false }">
       <LTileLayer
         url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
         layer-type="base"
