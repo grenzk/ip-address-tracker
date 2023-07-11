@@ -19,7 +19,9 @@ const { defineComponentBinds, handleSubmit, resetForm } = useForm({
 const ipAddress = defineComponentBinds('ipAddress')
 
 const showMessage = (message) => {
-  toast.add({ severity: 'error', summary: 'Error', detail: message, life: 3000 })
+  const newMessage = message.replace(' or IPv6', '')
+
+  toast.add({ severity: 'error', summary: 'Error', detail: newMessage, life: 3000 })
 }
 
 onBeforeMount(() => {
