@@ -52,7 +52,7 @@ const onSubmit = handleSubmit((values) => {
 </script>
 
 <template>
-  <Toast />
+  <Toast position="bottom-center" />
   <main>
     <div class="container">
       <div class="user-input l-flex">
@@ -117,9 +117,12 @@ const onSubmit = handleSubmit((values) => {
     background-image: url('./assets/img/pattern-bg-desktop.png');
   }
 }
+.p-toast {
+  width: 22rem !important;
 
-.p-toast-icon-close {
-  border: none;
+  .p-toast-icon-close {
+    border: none;
+  }
 }
 
 .user-input,
