@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useForm } from 'vee-validate'
+import { useToast } from 'primevue/usetoast'
 import Axios from 'axios'
 import * as Yup from 'yup'
 
@@ -8,15 +9,18 @@ import { API_KEY, API_ENDPOINT } from '@/config'
 
 import { MapView, GeolocationItem } from '@/components'
 
+const toast = useToast()
 const geolocationData = ref(null)
 
 const schema = Yup.object({ ipAddress: Yup.string().trim().required().label('IP address') })
-
 const { defineComponentBinds, handleSubmit, resetForm } = useForm({
   validationSchema: schema
 })
-
 const ipAddress = defineComponentBinds('ipAddress')
+
+const showMessage = (message) => {
+  toast.add({ severity: 'error', summary: 'Error', detail: message, life: 3000 })
+}
 
 const fetchGeolocationData = async (input) => {
   try {
@@ -28,7 +32,7 @@ const fetchGeolocationData = async (input) => {
     })
     geolocationData.value = response.data
   } catch (error) {
-    geolocationData.value = error.response.data.messages
+    showMessage(error.response.data.messages)
   }
 }
 
@@ -103,6 +107,10 @@ const onSubmit = handleSubmit((values) => {
   .container {
     background-image: url('./assets/img/pattern-bg-desktop.png');
   }
+}
+
+.p-toast-icon-close {
+  border: none;
 }
 
 .user-input,
