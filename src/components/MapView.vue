@@ -11,6 +11,10 @@ const props = defineProps({
 const zoom = ref(12)
 const center = ref([40.6782, -73.9442])
 const mapHeight = ref('100%')
+const attribution = `
+        <a href="https://www.stadiamaps.com/">&copy; Stadia Maps</a>
+        <a href="https://openmaptiles.org/">&copy; OpenMapTiles</a>
+        <a href="https://www.openstreetmap.org/about/">&copy; OpenStreetMap contributors</a>.`
 
 const adjustMapHeight = () => {
   const containerElement = document.querySelector('.container')
@@ -40,6 +44,7 @@ watchEffect(() => {
         url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
         layer-type="base"
         name="Stadia Maps Basemap"
+        :attribution="attribution"
       ></LTileLayer>
       <LMarker :lat-lng="center">
         <LIcon icon-url="src/assets/img/icon-location.svg" />
