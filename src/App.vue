@@ -117,6 +117,7 @@ const onSubmit = handleSubmit((values) => {
     background-image: url('./assets/img/pattern-bg-desktop.png');
   }
 }
+
 .p-toast {
   width: 22rem !important;
 
@@ -128,6 +129,8 @@ const onSubmit = handleSubmit((values) => {
 .user-input,
 .network-info {
   transform: translateX(-50%);
+  z-index: 1;
+  position: absolute;
 }
 
 form {
@@ -135,8 +138,6 @@ form {
 }
 
 .user-input {
-  z-index: 1;
-  position: absolute;
   top: 1.7rem;
   left: 50%;
   width: 88%;
@@ -153,7 +154,6 @@ form {
   .p-inputgroup {
     --input-button-br: 1rem;
     display: flex;
-    width: 100%;
 
     .p-inputtext {
       font-family: var(--body-font);
@@ -178,8 +178,6 @@ form {
 }
 
 .network-info {
-  z-index: 1;
-  position: absolute;
   bottom: -55%;
   left: 50%;
   background-color: var(--neutral-white);
