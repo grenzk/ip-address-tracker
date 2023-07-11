@@ -61,6 +61,10 @@
       align-items: stretch;
       row-gap: 1rem;
       min-width: 0;
+
+      .value {
+        text-align: start;
+      }
     }
 
     .p-divider-solid.p-divider-vertical {

@@ -38,6 +38,7 @@ defineProps({
   .value {
     font-weight: var(--font-medium);
     font-size: var(--h2-font-size);
+    text-align: center;
   }
 }
 
