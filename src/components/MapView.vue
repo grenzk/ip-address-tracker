@@ -8,8 +8,8 @@ const props = defineProps({
   }
 })
 
-const zoom = ref(12)
-const center = ref([40.6782, -73.9442])
+const zoom = ref(15)
+const center = ref([40.748817, -73.985428])
 const mapHeight = ref('100%')
 const attribution = `
         <a href="https://www.stadiamaps.com/">&copy; Stadia Maps</a>
