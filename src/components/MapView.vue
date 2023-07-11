@@ -47,7 +47,7 @@ watchEffect(() => {
         :attribution="attribution"
       ></LTileLayer>
       <LMarker :lat-lng="center">
-        <LIcon icon-url="src/assets/img/icon-location.svg" />
+        <LIcon icon-url="/icon-location.svg" />
       </LMarker>
     </LMap>
   </div>
