@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onBeforeUpdate } from 'vue'
+import { ref, onMounted, watchEffect } from 'vue'
 import { LMap, LTileLayer, LMarker, LIcon } from '@vue-leaflet/vue-leaflet'
 
 const props = defineProps({
@@ -26,7 +26,7 @@ onMounted(() => {
   window.addEventListener('resize', adjustMapHeight)
 })
 
-onBeforeUpdate(() => {
+watchEffect(() => {
   if (props.location) {
     center.value = [props.location.lat, props.location.lng]
   }
