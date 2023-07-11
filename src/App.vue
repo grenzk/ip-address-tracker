@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { onBeforeMount, ref } from 'vue'
 import { useForm } from 'vee-validate'
 import { useToast } from 'primevue/usetoast'
 import Axios from 'axios'
@@ -22,6 +22,14 @@ const showMessage = (message) => {
   toast.add({ severity: 'error', summary: 'Error', detail: message, life: 3000 })
 }
 
+onBeforeMount(() => {
+  const cachedResponse = localStorage.getItem('cachedResponse')
+
+  if (cachedResponse) {
+    geolocationData.value = JSON.parse(cachedResponse)
+  }
+})
+
 const fetchGeolocationData = async (input) => {
   try {
     const response = await Axios.get(API_ENDPOINT, {
@@ -31,6 +39,7 @@ const fetchGeolocationData = async (input) => {
       }
     })
     geolocationData.value = response.data
+    localStorage.setItem('cachedResponse', JSON.stringify(response.data))
   } catch (error) {
     showMessage(error.response.data.messages)
   }
