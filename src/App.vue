@@ -6,16 +6,17 @@ import Axios from 'axios'
 import * as Yup from 'yup'
 
 import { API_KEY, API_ENDPOINT } from '@/config'
-
 import { MapView, GeolocationItem } from '@/components'
 
 const toast = useToast()
 const geolocationData = ref(null)
 
 const schema = Yup.object({ ipAddress: Yup.string().trim().required().label('IP address') })
+
 const { defineComponentBinds, handleSubmit, resetForm } = useForm({
   validationSchema: schema
 })
+
 const ipAddress = defineComponentBinds('ipAddress')
 
 const showMessage = (message) => {
@@ -23,14 +24,6 @@ const showMessage = (message) => {
 
   toast.add({ severity: 'error', summary: 'Error', detail: newMessage, life: 3000 })
 }
-
-onBeforeMount(() => {
-  const cachedResponse = localStorage.getItem('cachedResponse')
-
-  if (cachedResponse) {
-    geolocationData.value = JSON.parse(cachedResponse)
-  }
-})
 
 const fetchGeolocationData = async (input) => {
   try {
@@ -40,6 +33,7 @@ const fetchGeolocationData = async (input) => {
         ipAddress: input
       }
     })
+
     geolocationData.value = response.data
     localStorage.setItem('cachedResponse', JSON.stringify(response.data))
   } catch (error) {
@@ -50,6 +44,14 @@ const fetchGeolocationData = async (input) => {
 const onSubmit = handleSubmit((values) => {
   fetchGeolocationData(values.ipAddress)
   resetForm()
+})
+
+onBeforeMount(() => {
+  const cachedResponse = localStorage.getItem('cachedResponse')
+
+  if (cachedResponse) {
+    geolocationData.value = JSON.parse(cachedResponse)
+  }
 })
 </script>
 
