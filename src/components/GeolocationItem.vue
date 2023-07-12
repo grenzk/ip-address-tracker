@@ -1,5 +1,5 @@
 <script setup>
-defineProps({
+const props = defineProps({
   label: {
     type: String,
     required: true
@@ -17,7 +17,7 @@ defineProps({
   <li>
     <div class="item l-flex">
       <p class="label">{{ label }}</p>
-      <p class="value" v-if="value === ', ' || value === 'UTC'">-</p>
+      <p class="value" v-if="value === ', ' || value === 'UTC' || value === null">-</p>
       <p class="value" v-else>{{ value || defaultValue }}</p>
     </div>
     <Divider type="solid" layout="vertical" />

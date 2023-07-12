@@ -94,7 +94,7 @@ const onSubmit = handleSubmit((values) => {
         />
         <GeolocationItem
           label="ISP"
-          :value="geolocationData?.isp"
+          :value="geolocationData?.isp === '' ? null : ''"
           default-value="SpaceX Starlink"
         />
       </ul>
