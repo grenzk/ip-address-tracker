@@ -21,7 +21,7 @@
 
     .p-inputgroup {
       .p-button {
-        width: 4.5rem;
+        width: 4.1rem;
 
         &-icon {
           font-size: 1rem;
@@ -85,8 +85,45 @@
 
 @media (min-width: 1400px) {
   :root {
+    --biggest-font-size: 1.95rem;
+    --h2-font-size: 1.56rem;
+    --small-font-size: 1.1rem;
+    --smaller-font-size: 0.75rem;
+  }
+
+  .container {
+    height: 17.5rem;
+  }
+
+  .user-input {
+    width: 38.6%;
+    top: 1.7rem;
+    row-gap: 1.9rem;
+  }
+
+  .network-info {
+    column-gap: 2.2rem;
+    bottom: -32.5%;
+    width: 77%;
+
+    li {
+      column-gap: 3.5rem;
+    }
+
+    li:nth-child(3) {
+      column-gap: 6rem;
+    }
+
+    .p-divider-solid.p-divider-vertical {
+      height: 5rem;
+    }
+  }
+}
+
+@media (min-width: 1700px) {
+  :root {
     --biggest-font-size: 2.6rem;
-    --h2-font-size: 1.9rem;
+    --h2-font-size: 2.3rem;
     --small-font-size: 1.2rem;
     --smaller-font-size: 0.9rem;
   }
@@ -116,11 +153,5 @@
     .p-divider-solid.p-divider-vertical {
       height: 7rem;
     }
-  }
-}
-
-@media (min-width: 1700px) {
-  :root {
-    --h2-font-size: 2.3rem;
   }
 }
