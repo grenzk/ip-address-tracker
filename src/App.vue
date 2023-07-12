@@ -11,7 +11,13 @@ import { MapView, GeolocationItem } from '@/components'
 const toast = useToast()
 const geolocationData = ref(null)
 
-const schema = Yup.object({ ipAddress: Yup.string().trim().required().label('IP address') })
+const schema = Yup.object({
+  ipAddress: Yup.string()
+    .max(15, 'Input correct IPv4 address.')
+    .trim()
+    .required()
+    .label('IP address')
+})
 
 const { defineComponentBinds, handleSubmit, resetForm } = useForm({
   validationSchema: schema
@@ -23,6 +29,19 @@ const showMessage = (message) => {
   const newMessage = message.replace(' or IPv6', '')
 
   toast.add({ severity: 'error', summary: 'Error', detail: newMessage, life: 3000 })
+}
+
+const validateInput = () => {
+  const currentInput = {
+    ipAddress: ipAddress.value.modelValue
+  }
+
+  if (currentInput.ipAddress.length > 15) {
+    schema.validate(currentInput).catch((error) => {
+      showMessage(error.errors[0])
+      resetForm()
+    })
+  }
 }
 
 const fetchGeolocationData = async (input) => {
@@ -69,7 +88,12 @@ onBeforeMount(() => {
               aria-describedby="ipAddress-help"
               placeholder="Search for any IP address or domain"
             />
-            <Button icon="pi pi-chevron-right" severity="secondary" type="submit" />
+            <Button
+              icon="pi pi-chevron-right"
+              severity="secondary"
+              type="submit"
+              @click="validateInput"
+            />
           </div>
         </form>
       </div>
@@ -96,7 +120,7 @@ onBeforeMount(() => {
         />
         <GeolocationItem
           label="ISP"
-          :value="geolocationData?.isp === '' ? null : ''"
+          :value="geolocationData?.isp === '' ? null : geolocationData?.isp"
           default-value="SpaceX Starlink"
         />
       </ul>
