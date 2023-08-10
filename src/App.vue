@@ -86,6 +86,7 @@ onBeforeMount(() => {
             <InputText
               v-bind="ipAddress"
               aria-describedby="ipAddress-help"
+              aria-label="Search for any IP address or domain"
               placeholder="Search for any IP address or domain"
             />
             <Button
