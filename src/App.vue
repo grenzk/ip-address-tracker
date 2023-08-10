@@ -75,7 +75,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <Toast position="bottom-center" />
+  <Toast position="bottom-center" id="ipAddress-help" />
   <main>
     <div class="container">
       <div class="user-input l-flex">
