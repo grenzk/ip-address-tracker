@@ -93,6 +93,7 @@ onBeforeMount(() => {
               icon="pi pi-chevron-right"
               severity="secondary"
               type="submit"
+              aria-label="Submit"
               @click="validateInput"
             />
           </div>
