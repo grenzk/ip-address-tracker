@@ -36,7 +36,7 @@ const validateInput = () => {
     ipAddress: ipAddress.value.modelValue
   }
 
-  if (currentInput.ipAddress && currentInput.ipAddress.length > 15) {
+  if (currentInput.ipAddress) {
     schema.validate(currentInput).catch((error) => {
       showMessage(error.errors[0])
       resetForm()
