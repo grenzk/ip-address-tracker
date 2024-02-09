@@ -1,5 +1,7 @@
 # IP Address Tracker
 
+A front-end application that displays network information and visually pinpoints the location on a map.
+
 ## Table of contents
 
 - [Overview](#overview)
@@ -8,6 +10,7 @@
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [Acknowledgments](#acknowledgments)
 
 ## Overview
 
