@@ -10,7 +10,7 @@ A front-end application that displays network information and visually pinpoints
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [Acknowledgments](#acknowledgments)
+- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
